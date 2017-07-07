@@ -15,11 +15,11 @@ public class SquareEquation {
 //    b=3;
 //    c=5;
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите значени a: ");
+        System.out.print("Введите значение a: ");
         double a = in.nextDouble();
-        System.out.print("Введите значени b: ");
+        System.out.print("Введите значение b: ");
         double b = in.nextDouble();
-        System.out.print("Введите значени c: ");
+        System.out.print("Введите значение c: ");
         double c = in.nextDouble();
 
         System.out.println("a=" + a + "\n" +"b=" + b + "\n" +"c=" + c);
@@ -29,7 +29,8 @@ public class SquareEquation {
         double x1;
         double x2;
 
-        d = Math.pow(b, 2) - (4*a*c);
+//        d = Math.pow(b, 2) - (4*a*c);\
+        d = (b*b) - (4*a*c);
 
         if (d < 0)
         {
@@ -43,8 +44,13 @@ public class SquareEquation {
                       }
           else
           {
-              x1=(-b-Math.sqrt(d))/(2*a);
-              x2=(-b+Math.sqrt(d))/(2*a);
+              double SqrtD;
+              double IncrA;
+              SqrtD = Math.sqrt(d);
+              IncrA = 2*a;
+
+              x1=(-b-SqrtD)/IncrA;
+              x2=(-b+SqrtD)/IncrA;
               System.out.print("Два корня, т.к. D = " + d + "\n"+ "Первый вещественный корень X1 = " + x1 + "\n" + "Второй вещественный корень X2 = " + x2);
           }
         }
