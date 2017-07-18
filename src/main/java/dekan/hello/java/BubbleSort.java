@@ -13,30 +13,33 @@ public class BubbleSort {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите величину алгоритма: ");
         int size = in.nextInt();
-        int sample[] = new int[size];
-        int i;
+        int array[] = new int[size];
         int a, b, c;
 
-        for (i = 0; i < size; i = i + 1) {
+        for (int i = 0; i < array.length; i = i + 1) {
             System.out.print("Введите значение " + i + " элеменета массива:");
-            sample[i] = in.nextInt();
+            array[i] = in.nextInt();
         }
 
-        for (i = 0; i < size; i = i + 1) {
-            System.out.print("Значение " + i + " элеменета массива: " + sample[i]+ "\n");
-        }
+        print(array);
 
-        for (a=size; a!=0; a--)
-            for (b=0; b!=a-1; b++){
-            if (sample[b] > sample[b+1]){
-                c =  sample[b+1];
-                sample[b+1]= sample[b];
-                sample[b] = c;
+        for (a = array.length; a != 0; a--) {
+            for (b = 0; b != a - 1; b++) {
+                if (array[b] > array[b + 1]) {
+                    c = array[b + 1];
+                    array[b + 1] = array[b];
+                    array[b] = c;
+                }
+                print(array);
             }
-         }
-
-        for (i = 0; i < size; i = i + 1) {
-            System.out.print("Значение " + i + " элеменета массива после сортировки: " + sample[i]+ "\n");
         }
+    }
+
+    private static void print(int[] array) {
+        System.out.print("[ ");
+        for (int i = 0; i < array.length; i = i + 1) {
+            System.out.printf("%d ", array[i]);
+        }
+        System.out.println("]");
     }
 }
